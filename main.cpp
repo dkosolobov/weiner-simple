@@ -7,11 +7,9 @@ int beg[LEN] = { 0, 0 }, end[LEN] = { 1, 1 }, par[LEN] = { 0, 0 };
 std::map<char, int> to[LEN], link[LEN];
 int n = 2;
 
-void attach(int kid, int node, char c, int b, int e) {
-	beg[kid] = b;
-	end[kid] = e;
-	par[kid] = node;
-	to[node][c] = kid;
+void attach(int kid, int p, char c, int b, int e) {
+	beg[kid] = b; end[kid] = e; par[kid] = p;
+	to[p][c] = kid;
 }
 
 void extend(char c) {
