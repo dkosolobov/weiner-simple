@@ -1,10 +1,10 @@
 #include <string>
 #include <map>
 
-const int MAXLEN = 1e6;
+const int LEN = 1e6;
 std::string s;
-int beg[MAXLEN], end[MAXLEN], par[MAXLEN];
-std::map<char, int> to[MAXLEN], link[MAXLEN];
+int beg[LEN] = { 0, 0 }, end[LEN] = { 1, 1 }, par[LEN] = { 0, 0 };
+std::map<char, int> to[LEN], link[LEN];
 int n = 2;
 
 void attach(int kid, int node, char c, int b, int e) {
@@ -32,7 +32,6 @@ void extend(char c) {
 }
 
 int main() {
-	beg[1] = 0; end[1] = 1; par[1] = 0;
 	for (int c = 0; c <= 255; c++)
 		to[0][c] = link[0][c] = 1;
 	s = "aabababbbbadcasdf#";
