@@ -2,7 +2,7 @@
 #include <map>
 
 const int LEN = 1e6;
-std::string s;
+std::string s = "aabababbbbadcasdf#";
 int beg[LEN] = { 0, 0 }, end[LEN] = { 1, 1 }, par[LEN] = { 0, 0 };
 std::map<char, int> to[LEN], link[LEN];
 int n = 2;
@@ -32,7 +32,6 @@ void extend(char c) {
 int main() {
 	for (int c = 0; c <= 255; c++)
 		to[0][c] = link[0][c] = 1;
-	s = "aabababbbbadcasdf#";
 	for (int i = s.size() - 1; i >= 0; i--)
 		extend(s[i]);
 }
